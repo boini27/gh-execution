@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Continue Website Deployment
 on:
   workflow_dispatch:
   push:
@@ -55,7 +55,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }} 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
